@@ -29,7 +29,7 @@ iex> Prowl.notify(application, event, description, priority \\ 0, url \\ "")
 {:ok, 988}
 ```
 
-Sends a notification with the app/event/description specified. Successful responses will come in the format above, where 988 is the number of api calls you have left (at the time of writing Prowl sets a limit of 1000 per hour).
+Sends a notification with the parameters given. Successful responses will come in the format above, where 988 is the number of api calls you have left (at the time of writing Prowl sets a limit of 1000 per hour).
 
 The optional field priority can range from -2 to 2.
 
