@@ -20,7 +20,7 @@ defmodule Prowl.Mixfile do
     [
      name: :prowl,
      files: ["lib", "LICENSE", "mix.exs", "mix.lock", "README.md"],
-     maintainers: ["Alexander Khan"],
+     maintainers: ["Zander Khan"],
      licenses: ["MIT"],
      links: %{"GitHub" => "https://github.com/zanderxyz/elixir-prowl"}
    ]
