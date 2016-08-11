@@ -8,25 +8,19 @@ The package can be installed by following these steps:
 
   1. Add prowl to your list of dependencies in `mix.exs`:
 
-        ```
         def deps do
           [{:prowl, "~> 0.0.1"}]
         end
-        ```
 
   2. Set your API key in your `config.exs`:
 
-        ```
         config :prowl, apikey: "your api key"
-        ```
 
   3. Ensure prowl is started before your application:
 
-        ```
         def application do
           [applications: [:prowl]]
         end
-        ```
 
 ## Usage
 
