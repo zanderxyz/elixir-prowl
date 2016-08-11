@@ -5,7 +5,7 @@ defmodule Prowl.Mixfile do
     [app: :prowl,
      version: "0.0.1",
      elixir: "~> 1.2",
-     description: "Elixir application for sending notifications to Prowl (http://www.prowlapp.com/)",
+     description: "Elixir application for sending notifications to Prowl (https://www.prowlapp.com/)",
      package: package,
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
