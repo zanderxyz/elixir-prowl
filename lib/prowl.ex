@@ -1,10 +1,14 @@
 defmodule Prowl do
+  @moduledoc """
+  Elixir application for sending notifications to Prowl (https://www.prowlapp.com/).
+  """
   use GenServer
   alias HTTPoison.Response
 
   @name __MODULE__
   @base_url "https://api.prowlapp.com/publicapi"
 
+  @doc """Starts the GenServer"""
   def start do
     GenServer.start(@name, :ok, [name: @name])
   end
@@ -13,6 +17,12 @@ defmodule Prowl do
     HTTPoison.start
   end
 
+  @doc """
+  Sends a notification to the API with the parameters given.
+  Responses will come in one of the following forms:
+    {:ok, api_calls_left}
+    {:error, {error_code, error_message}}
+  """
   def notify(application, event, description, priority \\ 0, url \\ "") do
     message = %{application: application,
                 event: event,
