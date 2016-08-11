@@ -27,7 +27,7 @@ defmodule Prowl.Mixfile do
   end
 
   defp deps do
-    [{:httpoison, "~> 0.8.0"}]
+    [{:httpoison, "~> 0.8.0"},
+     {:floki, "~> 0.9.0"}]
   end
 end
-a

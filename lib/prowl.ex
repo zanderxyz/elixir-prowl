@@ -37,7 +37,36 @@ defmodule Prowl do
   end
 
   defp read_response(%Response{status_code: 200, body: body}) do
+    {:ok, get_remaining_queries(body)}
+  end
+  defp read_response(%Response{status_code: _, body: body}) do
+    {:error, get_error(body)}
+  end
+
+  defp get_remaining_queries(body) do
     body
+    |> Floki.find("success")
+    |> Floki.attribute("remaining")
+    |> List.first
+    |> String.to_integer
+  end
+
+  defp get_error(body) do
+    {get_error_number(body), get_error_message(body)}
+  end
+
+  defp get_error_number(body) do
+    body
+    |> Floki.find("error")
+    |> Floki.attribute("code")
+    |> List.first
+    |> String.to_integer
+  end
+
+  defp get_error_message(body) do
+    body
+    |> Floki.find("error")
+    |> Floki.text
   end
 
   defp send_reply(body, state) do
