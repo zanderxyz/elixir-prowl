@@ -1,34 +1,58 @@
 defmodule Prowl.Mixfile do
   use Mix.Project
 
+  @version "0.0.2"
+
   def project do
-    [app: :prowl,
-     version: "0.0.1",
-     elixir: "~> 1.2",
-     description: "Elixir application for sending notifications to Prowl (https://www.prowlapp.com/)",
-     package: package,
-     build_embedded: Mix.env == :prod,
-     start_permanent: Mix.env == :prod,
-     deps: deps]
+    [
+      app: :prowl,
+      version: @version,
+      elixir: "~> 1.6",
+      start_permanent: Mix.env() == :prod,
+      deps: deps(),
+
+      # Hex
+      description: description(),
+      package: package(),
+
+      # Docs
+      name: "Elixir Prowl",
+      source_url: "https://github.com/zanderxyz/elixir-prowl",
+      homepage_url: "https://github.com/zanderxyz/elixir-prowl",
+      docs: [
+        source_ref: "v#{@version}",
+        main: "Elixir Prowl",
+        canonical: "http://hexdocs.pm/elixir-prowl",
+        source_url: "https://github.com/zanderxyz/elixir-prowl"
+      ]
+    ]
   end
 
   def application do
-    [applications: [:logger]]
+    [applications: [:logger, :httpoison]]
   end
 
-  def package do
+  # Description for Hex
+  defp description do
+    """
+    Elixir application for sending notifications to [Prowl](https://www.prowlapp.com/).
+    """
+  end
+
+  # These are the default files included in the package
+  defp package do
     [
-     name: :prowl,
-     files: ["lib", "LICENSE", "mix.exs", "mix.lock", "README.md"],
-     maintainers: ["Zander Khan"],
-     licenses: ["MIT"],
-     links: %{"GitHub" => "https://github.com/zanderxyz/elixir-prowl"}
-   ]
+      maintainers: ["Zander Khan"],
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/zanderxyz/elixir-prowl"}
+    ]
   end
 
   defp deps do
-    [{:httpoison, "~> 0.8.0"},
-     {:floki, "~> 0.9.0"},
-     {:ex_doc, ">= 0.0.0"}]
+    [
+      {:httpoison, "~> 1.0"},
+      {:floki, "~> 0.9.0"},
+      {:ex_doc, ">= 0.0.0"}
+    ]
   end
 end

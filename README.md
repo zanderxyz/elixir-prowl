@@ -9,7 +9,7 @@ The package can be installed by following these steps:
   1. Add prowl to your list of dependencies in `mix.exs`:
 
         def deps do
-          [{:prowl, "~> 0.0.1"}]
+          [{:prowl, "~> 0.0.2"}]
         end
 
   2. Set your API key in your `config.exs`:
