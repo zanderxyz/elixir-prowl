@@ -7,20 +7,21 @@ Elixir application for sending notifications to [Prowl](https://www.prowlapp.com
 The package can be installed by following these steps:
 
   1. Add prowl to your list of dependencies in `mix.exs`:
-
+```elixir
         def deps do
           [{:prowl, "~> 0.0.2"}]
         end
-
+```
   2. Set your API key in your `config.exs`:
-
+```elixir
         config :prowl, apikey: "your api key"
-
+```
   3. Ensure prowl is started before your application:
-
+```elixir
         def application do
           [applications: [:prowl]]
         end
+```
 
 ## Usage
 
