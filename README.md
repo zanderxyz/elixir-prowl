@@ -9,7 +9,7 @@ The package can be installed by following these steps:
   1. Add prowl to your list of dependencies in `mix.exs`:
 ```elixir
         def deps do
-          [{:prowl, "~> 0.0.2"}]
+          [{:prowl, "~> 0.1.0"}]
         end
 ```
   2. Set your API key in your `config.exs`:
