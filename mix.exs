@@ -51,7 +51,7 @@ defmodule Prowl.Mixfile do
   defp deps do
     [
       {:httpoison, "~> 1.0"},
-      {:floki, "~> 0.9.0"},
+      {:floki, "~> 0.20"},
       {:ex_doc, ">= 0.0.0"}
     ]
   end
