@@ -21,7 +21,7 @@ defmodule Prowl.Mixfile do
       homepage_url: "https://github.com/zanderxyz/elixir-prowl",
       docs: [
         source_ref: "v#{@version}",
-        main: "Elixir Prowl",
+        main: "Prowl",
         canonical: "http://hexdocs.pm/elixir-prowl",
         source_url: "https://github.com/zanderxyz/elixir-prowl"
       ]
